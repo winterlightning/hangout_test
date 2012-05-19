@@ -1,5 +1,5 @@
 (function() {
-  var DaApp, Square, SquareItem;
+  var DaApp, Square, SquareItem, exports;
   var __hasProp = Object.prototype.hasOwnProperty, __extends = function(child, parent) {
     for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; }
     function ctor() { this.constructor = child; }
@@ -33,7 +33,7 @@
     DaApp.prototype.el = "#thetable";
     function DaApp() {
       DaApp.__super__.constructor.apply(this, arguments);
-      Square.bind("create", this.evaluate);
+      Square.bind("update", this.evaluate);
       Square.fetch();
     }
     DaApp.prototype.evaluate = function() {
@@ -44,4 +44,8 @@
     };
     return DaApp;
   })();
+  exports = this;
+  exports.DaApp = DaApp;
+  exports.SquareItem = SquareItem;
+  exports.Square = Square;
 }).call(this);

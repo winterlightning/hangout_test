@@ -16,7 +16,7 @@ class DaApp extends Spine.Controller
 
   constructor: ->
     super
-    Square.bind("create",  @evaluate)
+    Square.bind("update",  @evaluate)
     Square.fetch()  
 
   evaluate: () ->
@@ -24,3 +24,8 @@ class DaApp extends Spine.Controller
 
   addall: ()->
     window.log("add all")
+    
+exports = this
+exports.DaApp = DaApp
+exports.SquareItem = SquareItem
+exports.Square = Square
